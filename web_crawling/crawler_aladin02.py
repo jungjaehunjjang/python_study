@@ -8,6 +8,18 @@ from bs4 import BeautifulSoup
 from datetime import datetime
 import traceback
 import codecs
+import mysql.connector
+
+mydb = mysql.connector.connect(
+    host = 'localhost',
+    user = 'root',
+    passwd = 'mysql',
+    database = 'jpa'
+)
+
+mycursor = mydb.cursor()
+
+
 
 d = datetime.today()
 
@@ -71,15 +83,22 @@ try:
 
         auth_info = book_author.split(' | ')
 
-        f.write(f'# 순위: {rank}위\n')
-        f.write(f'# 제목: {book_title}\n')
-        f.write(f'# 저자: {auth_info[0]}\n')
-        f.write(f'# 출판사: {auth_info[1]}\n')
-        f.write(f'# 출판일: {auth_info[2]}\n')
-        f.write(f'# 가격: {book_price.split(", ")[0]}\n')
-        f.write('-' * 40 + '\n')
+        # f.write(f'# 순위: {rank}위\n')
+        # f.write(f'# 제목: {book_title}\n')
+        # f.write(f'# 저자: {auth_info[0]}\n')
+        # f.write(f'# 출판사: {auth_info[1]}\n')
+        # f.write(f'# 출판일: {auth_info[2]}\n')
+        # f.write(f'# 가격: {book_price.split(", ")[0]}\n')
+        # f.write('-' * 40 + '\n')
+
+        query = 'INSERT INTO tbl_crawling (data_rank, title, author, company, publish_date, price) VALUES (%s, %s, %s, %s, %s, %s)'
+        values = (rank, book_title, auth_info[0], auth_info[1], auth_info[2], book_price.split(", ")[0])
+
+        mycursor.execute(query, values)
 
         rank += 1
+    
+    mydb.commit()
 
 except:
     print('파일 출력 실패!')
@@ -87,4 +106,6 @@ except:
 
 finally:
     f.close()
+    mycursor.close()
+    mydb.close()
 
