@@ -20,5 +20,8 @@ print(f'표준편차: {st.stdev(li)}')
 from math import factorial as fac
 
 print(fac(8))
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 773a65098d27ec26dac0db6bcb04eff497ff7cd8

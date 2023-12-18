@@ -11,6 +11,10 @@
 리스트에 담아서 리턴.
 '''
 file_path = 'C:/test/anthem.txt'
+<<<<<<< HEAD
+=======
+
+>>>>>>> 773a65098d27ec26dac0db6bcb04eff497ff7cd8
 '''
 try:
     f = open(file_path, 'r')
@@ -45,12 +49,17 @@ try:
     text = f.readlines()
     print(text)
     print(type(text))
+<<<<<<< HEAD
     text.reverse()
+=======
+    text.reverse
+>>>>>>> 773a65098d27ec26dac0db6bcb04eff497ff7cd8
     for t in text:
         print(t)
 except:
     print('파일 로드 실패!')
 finally:
+<<<<<<< HEAD
     f.close()
 
 
@@ -60,3 +69,6 @@ finally:
 
 
 
+=======
+    f.close()
+>>>>>>> 773a65098d27ec26dac0db6bcb04eff497ff7cd8

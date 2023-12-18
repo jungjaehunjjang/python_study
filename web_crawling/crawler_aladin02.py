@@ -8,6 +8,7 @@ from bs4 import BeautifulSoup
 from datetime import datetime
 import traceback
 import codecs
+<<<<<<< HEAD
 import mysql.connector
 
 mydb = mysql.connector.connect(
@@ -20,6 +21,8 @@ mydb = mysql.connector.connect(
 mycursor = mydb.cursor()
 
 
+=======
+>>>>>>> 773a65098d27ec26dac0db6bcb04eff497ff7cd8
 
 d = datetime.today()
 
@@ -83,6 +86,7 @@ try:
 
         auth_info = book_author.split(' | ')
 
+<<<<<<< HEAD
         # f.write(f'# 순위: {rank}위\n')
         # f.write(f'# 제목: {book_title}\n')
         # f.write(f'# 저자: {auth_info[0]}\n')
@@ -99,13 +103,28 @@ try:
         rank += 1
     
     mydb.commit()
+=======
+        f.write(f'# 순위: {rank}위\n')
+        f.write(f'# 제목: {book_title}\n')
+        f.write(f'# 저자: {auth_info[0]}\n')
+        f.write(f'# 출판사: {auth_info[1]}\n')
+        f.write(f'# 출판일: {auth_info[2]}\n')
+        f.write(f'# 가격: {book_price.split(", ")[0]}\n')
+        f.write('-' * 40 + '\n')
+
+        rank += 1
+>>>>>>> 773a65098d27ec26dac0db6bcb04eff497ff7cd8
 
 except:
     print('파일 출력 실패!')
     print(traceback.format_exc())
 
 finally:
+<<<<<<< HEAD
     f.close()
     mycursor.close()
     mydb.close()
 
+=======
+    f.close()
+>>>>>>> 773a65098d27ec26dac0db6bcb04eff497ff7cd8

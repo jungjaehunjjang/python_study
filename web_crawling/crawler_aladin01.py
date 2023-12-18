@@ -49,7 +49,11 @@ div_list = soup.find_all('div', class_='ss_book_box')
 # li 안에 우리가 필요로 하는 텍스트가 존재.
 # 2, 3, 4번째 li의 텍스트를 가져와야 하겠더라.
 first_book = div_list[0].find_all('li') # 1위 책 내용에서 모든 li 추출.
+<<<<<<< HEAD
 # for n in first_book:
+=======
+# for n first_book:
+>>>>>>> 773a65098d27ec26dac0db6bcb04eff497ff7cd8
 #     print(n)
 
 # text는 태그를 제외한 사용자가 실제로 브라우저에서 확인 가능한

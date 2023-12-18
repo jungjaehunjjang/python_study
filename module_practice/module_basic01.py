@@ -17,5 +17,9 @@ print(5 * 5 * math.pi)
 print(math.sqrt(3))
 print(math.factorial(6))
 print(math.log10(2))
+<<<<<<< HEAD
 print(math.pow(7, 4)) # 7 ** 4
 
+=======
+print(math.pow(7, 4)) # 7**4
+>>>>>>> 773a65098d27ec26dac0db6bcb04eff497ff7cd8

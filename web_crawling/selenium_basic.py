@@ -35,7 +35,11 @@ t.sleep(1)
 
 # 자동으로 텍스트를 입력하기
 id_input = driver.find_element(By.XPATH, '//*[@id="id"]')
+<<<<<<< HEAD
 id_input.send_keys('stephen4951')
+=======
+id_input.send_keys('josh9269')
+>>>>>>> 773a65098d27ec26dac0db6bcb04eff497ff7cd8
 
 t.sleep(1)
 driver.find_element(By.XPATH, '//*[@id="pw"]').send_keys('aaa1111!')

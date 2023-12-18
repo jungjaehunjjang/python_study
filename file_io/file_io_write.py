@@ -37,7 +37,7 @@ ex) open('파일 경로', 모드)
 # 예외 처리를 통해 안전하게 작성하는 것을 권장합니다.
 try:
     # 파일 저장 기능 (write, append)
-    file_path = r'C:\test\anthem2.txt'
+    file_path = r'C:\test\anthem.txt'
 
     # 파일 입출력을 실행하는 내장 함수 open()
     # 반환값으로 파일 입출력을 담당하는 객체가 리턴됩니다.
